@@ -1,0 +1,11 @@
+.task_status{
+    font-size: 16px;
+    background-color: #ccc;
+    color: #111;
+    border-radius: 5px;
+    height: 40px;
+    padding: 3px 13px;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+}

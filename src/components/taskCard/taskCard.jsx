@@ -1,29 +1,50 @@
-import "../taskCard/taskCard.css";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { useContext, useState, useEffect } from 'react'
+import '../taskCard/taskCard.css'
+import { AppContext } from '../contexts/appContext'
+import { TaskCardContext } from '../contexts/taskCardContext'
+import TaskEdit from '../taskEdit/taskEdit'
 
+const taskCard = ({ title, description, taskIndex, status }) => {
+    const { tasks, setTasks } = useContext(AppContext);
+    const [showModal, setShowModal] = useState(false);
 
-const TaskCard = () => {
+    const taskDeleteHandler = () => {
+        const newTasks = tasks.filter((task, index) => index != taskIndex)
+        setTasks(newTasks);
+    }
+
+    const openModalHandler = () => {
+        setShowModal(true);
+    }
+
     return (
-        <div className="card">
-            <p className="task_text">ncsncnskj</p>
-
-            <div className="card_icons">
-                <div
-                    className="task_delete"
-                    // onClick={() => handleDelete(index)}
-                >
-                    {/* <FontAwesomeIcon icon="fa-solid fa-trash" /> */}
-                    <i className="fa-solid fa-trash"></i>
+        <TaskCardContext.Provider value={{ title, description, setShowModal }}>
+            <div className='task_card' >
+                {showModal && <TaskEdit />}
+                <p className='task_title'>{title}</p>
+                <div className='task_desc'>
+                    {description}
                 </div>
-                <div
-                    className="task_edit"
-                    // onClick={() => handleEdit(index)}
-                >
-                    {/* <FontAwesomeIcon icon="fa-solid fa-pen-to-square" /> */}
+                <div className='task_card_footer'>
+                    <div className='taskStatus'>
+                        {status}
+                    </div>
+                    <div className='task_card_actions'>
+                        <div
+                            className='task_edit'
+                            onClick={openModalHandler}>
+                            <i className="fa-solid fa-pen-to-square"></i>
+                        </div>
+                        <div
+                            className='task_delete'
+                            onClick={taskDeleteHandler}>
+                            <i className="fa-solid fa-trash delete_icon"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    );
+        </TaskCardContext.Provider>
+    )
 }
 
-export default TaskCard;
+export default taskCard

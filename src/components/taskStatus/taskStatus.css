@@ -1,11 +1,8 @@
 .task_status{
-    font-size: 16px;
-    background-color: #ccc;
-    color: #111;
-    border-radius: 5px;
-    height: 40px;
-    padding: 3px 13px;
-    border: none;
-    cursor: pointer;
-    width: 20%;
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 100%;
+    background-color:#ebeae8;
 }

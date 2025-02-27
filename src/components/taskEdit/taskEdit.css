@@ -1,0 +1,12 @@
+.edit_modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(13, 13, 13, 0.75); 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    z-index: 30; 
+}

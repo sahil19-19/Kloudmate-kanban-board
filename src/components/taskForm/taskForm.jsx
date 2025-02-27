@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import "./TaskForm.css";
 import TaskStatus from "../taskStatus/taskStatus";
+import {AppContext} from "../contexts/appContext";
 // import Filter from '../filter/filter'
 
-const TaskForm = () => {
-    const [enteredTitle, setTitle] = useState("");
-    const [enteredDescription, setDescription] = useState("");
+const TaskForm = ({button_action, title, desc, status}) => {
+    const {setTasks} = useContext(AppContext);
+    const [enteredTitle, setTitle] = useState(title);
+    const [enteredDescription, setDescription] = useState(desc);
     const [enteredStatus, setStatus] = useState("todo");
 
-    console.log(enteredStatus);
+    // console.log(enteredStatus);
 
     const titleChangeHandler = (event) => {
         setTitle(event.target.value);
@@ -21,9 +23,23 @@ const TaskForm = () => {
         setStatus(event);
     };
 
+    const formSubmitHandler = (event) => {
+        event.preventDefault();
+        setTasks(prev => { // adding new value to the tasks array
+            return [...prev, {
+                enteredTitle,
+                enteredDescription,
+                enteredStatus
+            }]
+        })
+        setTitle('');
+        setDescription('');
+        setStatus('todo');
+    }
+
     return (
         <div className="form">
-            <form>
+            <form onSubmit={formSubmitHandler}>
                 <div className="task__controls">
                     <div className="task__control">
                         <label>Title</label>
@@ -41,10 +57,13 @@ const TaskForm = () => {
                             type="text"
                         />
                     </div>
+                    <div className="task__control">
+                        <label>Status</label>
+                        <TaskStatus status={enteredStatus} onChangeStatus={statusChangeHandler}/>
+                    </div>
                 </div>
                 <div className="task__actions">
-                    <TaskStatus status={enteredStatus} onChangeStatus={statusChangeHandler}/>
-                    <button type="submit" className="submit">Add Task</button>
+                    <button type="submit" className="submit">{button_action}</button>
                 </div>
             </form>
             {/* <Filter /> */}

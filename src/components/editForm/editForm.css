@@ -1,4 +1,23 @@
 .edit_form_modal{
     z-index: 40;
     width: 500px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+}
+
+.modal_exit{
+    margin-left: auto;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal_exit:hover {
+    background-color: #ebebeb;
 }

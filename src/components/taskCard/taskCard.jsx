@@ -4,7 +4,7 @@ import { AppContext } from '../contexts/appContext'
 import { TaskCardContext } from '../contexts/taskCardContext'
 import TaskEdit from '../taskEdit/taskEdit'
 
-const taskCard = ({ title, description, taskIndex, status }) => {
+const TaskCard = ({ title, description, taskIndex, status }) => {
     const { tasks, setTasks } = useContext(AppContext);
     const [showModal, setShowModal] = useState(false);
 
@@ -18,13 +18,9 @@ const taskCard = ({ title, description, taskIndex, status }) => {
     }
 
     return (
-        <TaskCardContext.Provider value={{ title, description, setShowModal }}>
+        <TaskCardContext.Provider value={{ title, description, setShowModal, status, taskDeleteHandler , showModal }}>
             <div className='task_card' >
                 {showModal && <TaskEdit />}
-                <p className='task_title'>{title}</p>
-                <div className='task_desc'>
-                    {description}
-                </div>
                 <div className='task_card_footer'>
                     <div className='taskStatus'>
                         {status}
@@ -42,9 +38,13 @@ const taskCard = ({ title, description, taskIndex, status }) => {
                         </div>
                     </div>
                 </div>
+                <p className='task_title'>{title}</p>
+                <div className='task_desc'>
+                    {description}
+                </div>
             </div>
         </TaskCardContext.Provider>
     )
 }
 
-export default taskCard
+export default TaskCard

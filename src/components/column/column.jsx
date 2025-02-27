@@ -10,7 +10,6 @@ const Column = ({title, status}) => {
         <div className='column'>
             <p className='column-heading'>{title}</p>
             <div>
-                {/* <TaskCard /> */}
                 {
                     tasks.map((task, index) => 
                         task.enteredStatus == status && (

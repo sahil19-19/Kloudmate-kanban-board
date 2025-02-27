@@ -9,7 +9,7 @@ import NewTask from "./components/newTask/newTask";
 function App() {
 	const [tasks, setTasks] = useState([]);
 
-	console.log(tasks);
+	// console.log(tasks);
 
 	return (
 		<>

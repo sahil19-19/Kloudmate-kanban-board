@@ -5,7 +5,7 @@ import './newTask.css'
 const newTask = () => {
   return (
     <div className='new_task'>
-        <TaskForm desc="" title="" button_action="submit"/>
+        <TaskForm status="todo" desc="" title="" button_action="Submit"/>
     </div>
   )
 }

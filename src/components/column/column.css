@@ -1,9 +1,12 @@
 .column{
     width: 25%;
-    background-color: aquamarine;
+    /* background-color: rgb(231, 251, 244); */
     margin: 10px;
 }
 
 .column-heading{
-    
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
 }

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 
-import "./TaskForm.css";
+import "./taskForm.css";
 import TaskStatus from "../taskStatus/taskStatus";
 import { AppContext } from "../contexts/appContext";
 // import Filter from '../filter/filter'

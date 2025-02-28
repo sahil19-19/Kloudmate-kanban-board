@@ -39,6 +39,8 @@ function App() {
                     <NewTask />
                 </section>
 
+                {/* <hr/> */}
+
                 <section className="column-container">
                     <Column title="To Do" status="todo" />
                     <Column title="Ongoing" status="in_progress" />

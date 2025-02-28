@@ -1,31 +1,31 @@
-
 .task_card {
     width: 100%;
     min-width: 103px;
     min-height: 130px;
-    border: 1px solid #d7d6d6;
+    /* border: 1px solid #d7d6d6; */
     border-radius: 10px;
     padding: 15px;
     margin: 7px 0;
     cursor: move;
+    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.2);
 }
 
-.task_card:active{
+.task_card:active {
     cursor: move;
 }
 
-.task_title{
+.task_title {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 15px;
-    margin-top: 5px;
+    text-align: center;
 }
 
 .task_desc {
     margin-bottom: 15px;
 }
 
-.taskStatus{
+.taskStatus {
     border-radius: 20px;
     width: 15px;
     height: 15px;
@@ -50,7 +50,7 @@
     border-radius: 100%;
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
@@ -58,4 +58,15 @@
 .task_delete:hover,
 .task_edit:hover {
     background-color: #ebebeb;
+}
+
+@media (max-width: 600px) {
+    .task_title {
+        margin-top: 12px;
+    }
+    
+    .task_delete,
+    .task_edit {
+        justify-content: right;
+    }
 }

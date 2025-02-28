@@ -54,7 +54,7 @@ const TaskCard = ({ title, description, taskIndex, status, key }) => {
                     <div className="taskStatus" style={statusColor[status]}>.</div>
                     <div className="task_card_actions">
                         <div className="task_edit" onClick={openModalHandler}>
-                            <i className="fa-solid fa-pen-to-square"></i>
+                            <i className="fa-solid fa-pen-to-square edit_icon"></i>
                         </div>
                         <div
                             className="task_delete"

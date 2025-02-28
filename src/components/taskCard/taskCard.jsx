@@ -25,6 +25,13 @@ const TaskCard = ({ title, description, taskIndex, status, key }) => {
         setShowModal(true);
     };
 
+    const statusColor = {
+        todo: { backgroundColor: "#faa7a7", color:"#faa7a7" },
+        in_progress: { backgroundColor: "#faf9a7",color:"#faf9a7" },
+        done: { backgroundColor: "#a7fab9",color:"#a7fab9" },
+        default: { backgroundColor: "#fff5f5",color:"#fff5f5" },
+    };
+
     return (
         <TaskCardContext.Provider
             value={{
@@ -44,7 +51,7 @@ const TaskCard = ({ title, description, taskIndex, status, key }) => {
             >
                 {showModal && <TaskEdit />}
                 <div className="task_card_footer">
-                    <div className="taskStatus">{status}</div>
+                    <div className="taskStatus" style={statusColor[status]}>.</div>
                     <div className="task_card_actions">
                         <div className="task_edit" onClick={openModalHandler}>
                             <i className="fa-solid fa-pen-to-square"></i>
@@ -57,7 +64,7 @@ const TaskCard = ({ title, description, taskIndex, status, key }) => {
                         </div>
                     </div>
                 </div>
-                <p className="task_title">{title}</p>
+                <p className="task_title" >{title}</p>
                 <div className="task_desc">{description}</div>
             </div>
         </TaskCardContext.Provider>

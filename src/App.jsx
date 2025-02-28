@@ -12,8 +12,19 @@ function App() {
 	const [draggedCard, setDraggedCard] = useState(null);
     // console.log(tasks);
 
+
 	const dropHandler = (index, status) => {
-		console.log(`${draggedCard} is going to column ${status} and index ${index}`)
+		console.log(tasks);
+		// if(draggedCard == null) return;
+		const draggedTask = tasks[draggedCard];
+
+		const temp = tasks.filter((task,index) => index !== draggedCard);
+		temp.splice(index, 0, {
+			...draggedTask,
+			enteredStatus : status
+		})
+		console.log(temp);
+		setTasks(temp);
 	}
 
     useEffect(() => {
@@ -23,7 +34,7 @@ function App() {
     return (
         <>
             <AppContext.Provider value={{ tasks, setTasks, setDraggedCard, dropHandler }}>
-                <section className="filter-container">
+                <section className="form-container">
                     {/* <TaskForm /> */}
                     <NewTask />
                 </section>

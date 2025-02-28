@@ -5,8 +5,11 @@
 }
 
 .column-heading{
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 600;
-    margin-bottom: 15px;
+    padding-bottom: 7px;
     text-align: center;
+    border-bottom: 3px solid #40342e85;
+    border-radius: 1px;
 }
+

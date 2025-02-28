@@ -10,7 +10,7 @@ const Column = ({ title, status }) => {
     return (
         <div className="column">
             <p className="column-heading">{title}</p>
-            <DropZone />
+            <DropZone status={status} index={0}/>
             <div>
                 {tasks.map(
                     (task, index) =>

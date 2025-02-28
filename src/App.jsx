@@ -41,7 +41,7 @@ function App() {
 
                 <section className="column-container">
                     <Column title="To Do" status="todo" />
-                    <Column title="In Progress" status="in_progress" />
+                    <Column title="Ongoing" status="in_progress" />
                     <Column title="Done" status="done" />
                 </section>
             </AppContext.Provider>

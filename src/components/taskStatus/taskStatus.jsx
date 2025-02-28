@@ -13,7 +13,7 @@ const taskStatus = (props) => {
                 onChange={dropDownChangeHandler}
             >
                 <option value="todo">To do</option>
-                <option value="in_progress">In progress</option>
+                <option value="in_progress">Ongoing</option>
                 <option value="done">Done</option>
             </select>
         </>

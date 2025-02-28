@@ -1,7 +1,7 @@
 
 .task_card {
     width: 100%;
-    min-width: 120px;
+    min-width: 103px;
     min-height: 130px;
     border: 1px solid #d7d6d6;
     border-radius: 10px;
@@ -27,7 +27,8 @@
 
 .taskStatus{
     border-radius: 20px;
-    width: 20px;
+    width: 15px;
+    height: 15px;
 }
 
 .task_card_footer {

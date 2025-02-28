@@ -10,10 +10,10 @@ const TaskForm = ({
     title,
     desc,
     status,
-    taskDeleteHandler,
-    exitModalHandler
+    exitModalHandler,
+    taskIndex,
 }) => {
-    const { setTasks } = useContext(AppContext);
+    const { tasks, setTasks } = useContext(AppContext);
 
     const [enteredTitle, setTitle] = useState(title);
     const [enteredDescription, setDescription] = useState(desc);
@@ -32,22 +32,30 @@ const TaskForm = ({
     const formSubmitHandler = (event) => {
         event.preventDefault();
         if (button_action === "Edit") {
-            taskDeleteHandler();
+            // taskDeleteHandler();
+            const temp = tasks.filter((task, index) => index !== taskIndex);
+            temp.splice(taskIndex , 0, {
+                enteredTitle,
+                enteredDescription,
+                enteredStatus,
+            });
+            setTasks(temp);
             exitModalHandler();
+        } else {
+            setTasks((prev) => {
+                // adding new value to the tasks array
+                return [
+                    ...prev,
+                    {
+                        enteredTitle,
+                        enteredDescription,
+                        enteredStatus,
+                    },
+                ];
+            });
+            setTitle("");
+            setDescription("");
         }
-        setTasks((prev) => {
-            // adding new value to the tasks array
-            return [
-                ...prev,
-                {
-                    enteredTitle,
-                    enteredDescription,
-                    enteredStatus,
-                },
-            ];
-        });
-        setTitle("");
-        setDescription("");
     };
 
     return (
@@ -60,6 +68,7 @@ const TaskForm = ({
                             value={enteredTitle}
                             onChange={titleChangeHandler}
                             type="text"
+                            required
                         />
                     </div>
                     <div className="task__control">

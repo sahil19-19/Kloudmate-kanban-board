@@ -39,8 +39,8 @@ const TaskCard = ({ title, description, taskIndex, status, key }) => {
                 description,
                 setShowModal,
                 status,
-                taskDeleteHandler,
                 showModal,
+                taskIndex,
             }}
         >
             <div

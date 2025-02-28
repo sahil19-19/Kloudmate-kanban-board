@@ -4,7 +4,7 @@ import "./editForm.css";
 import { TaskCardContext } from "../contexts/taskCardContext";
 
 const EditForm = () => {
-    const { setShowModal, description, title, status, taskDeleteHandler } =
+    const { setShowModal, description, title, status, taskDeleteHandler, taskIndex } =
         useContext(TaskCardContext);
     const exitModalHandler = () => {
         setShowModal(false);
@@ -22,6 +22,7 @@ const EditForm = () => {
                 button_action="Edit"
                 taskDeleteHandler={taskDeleteHandler}
                 exitModalHandler={exitModalHandler}
+                taskIndex={taskIndex}
             />
         </div>
     );

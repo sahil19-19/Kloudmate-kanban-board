@@ -14,7 +14,7 @@ function App() {
 
 
 	const dropHandler = (index, status) => {
-		console.log(tasks);
+		// console.log(tasks);
 		// if(draggedCard == null) return;
 		const draggedTask = tasks[draggedCard];
 
@@ -23,7 +23,7 @@ function App() {
 			...draggedTask,
 			enteredStatus : status
 		})
-		console.log(temp);
+		// console.log(temp);
 		setTasks(temp);
 	}
 

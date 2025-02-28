@@ -34,11 +34,19 @@ const TaskForm = ({
         if (button_action === "Edit") {
             // taskDeleteHandler();
             const temp = tasks.filter((task, index) => index !== taskIndex);
-            temp.splice(taskIndex , 0, {
-                enteredTitle,
-                enteredDescription,
-                enteredStatus,
-            });
+            if(status === enteredStatus)
+                temp.splice(taskIndex , 0, {
+                    enteredTitle,
+                    enteredDescription,
+                    enteredStatus,
+                });
+            else {
+                temp.push({
+                    enteredTitle,
+                    enteredDescription,
+                    enteredStatus,
+                })
+            }
             setTasks(temp);
             exitModalHandler();
         } else {

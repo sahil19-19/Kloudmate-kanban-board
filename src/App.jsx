@@ -9,16 +9,20 @@ const prevTasks = localStorage.getItem("tasks");
 
 function App() {
     const [tasks, setTasks] = useState(JSON.parse(prevTasks) || []);
-
+	const [draggedCard, setDraggedCard] = useState(null);
     // console.log(tasks);
-	
+
+	const dropHandler = (index, status) => {
+		console.log(`${draggedCard} is going to column ${status} and index ${index}`)
+	}
+
     useEffect(() => {
         localStorage.setItem("tasks", JSON.stringify(tasks));
     }, [tasks]);
 
     return (
         <>
-            <AppContext.Provider value={{ tasks, setTasks }}>
+            <AppContext.Provider value={{ tasks, setTasks, setDraggedCard, dropHandler }}>
                 <section className="filter-container">
                     {/* <TaskForm /> */}
                     <NewTask />

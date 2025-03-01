@@ -43,6 +43,6 @@
     margin-left: 10px;
     border: none;
     cursor: pointer;
-    /* width: 20%; */
-    min-width: 20%;
+    min-width: 80px;
+    width: 20%;
 }

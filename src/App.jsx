@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-// import Filter from "./components/filter/filter";
 import Column from "./components/column/column";
 import { AppContext } from "./components/contexts/appContext";
 import NewTask from "./components/newTask/newTask";
@@ -9,9 +8,12 @@ const prevTasks = localStorage.getItem("tasks");
 
 function App() {
     const [tasks, setTasks] = useState(JSON.parse(prevTasks) || []);
+    const[searchTasks, setSearchTasks] = useState([]); // to store tasks that we filter using search bar
+
 	const [draggedCard, setDraggedCard] = useState(null);
     // console.log(tasks);
 
+    // console.log(searchTasks);
 
 	const dropHandler = (index, status) => {
 		// console.log(tasks);
@@ -33,7 +35,7 @@ function App() {
 
     return (
         <>
-            <AppContext.Provider value={{ tasks, setTasks, setDraggedCard, dropHandler }}>
+            <AppContext.Provider value={{ tasks, setTasks, setDraggedCard, dropHandler, setSearchTasks, searchTasks }}>
                 <section className="form-container">
                     {/* <TaskForm /> */}
                     <NewTask />

@@ -102,6 +102,25 @@ npm install
 npm run dev
 ```
 
+
+## 📌 **Usage Examples**
+
+### **Create new tasks**
+![image](https://github.com/user-attachments/assets/501b1ca2-be59-4f0c-8d48-20960327a843)
+
+### **Edit tasks**
+![image](https://github.com/user-attachments/assets/477bdd8d-87f8-4f61-9ecf-08ce82540fe0)
+
+### **Change columns and positions of tasks**
+![image](https://github.com/user-attachments/assets/ee60c942-6b82-4c06-97eb-5c06ab59a105)
+
+### **Filter Tasks using the Title**
+![image](https://github.com/user-attachments/assets/97e0db15-8a2c-4389-86bd-e67513fab651)
+
+### **Demo display for phone**
+![image](https://github.com/user-attachments/assets/52b3be6c-a54f-4c8e-9599-c546e682aafe)
+
+
 ## 📌 **Live Link**
 
 ```

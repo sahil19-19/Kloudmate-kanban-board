@@ -1,7 +1,7 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 
 import { AppContext } from "../contexts/appContext";
-import "./SearchBar.css";
+import "./searchBar.css";
 
 const SearchBar = () => {
     const [title, setTitle] = useState("");

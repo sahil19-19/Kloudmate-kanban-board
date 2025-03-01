@@ -4,10 +4,12 @@
 This is a lightweight Interactive Kanban Board built using ReactJS
 
 ### **Key Features**
-✅ **Create, Edit and Delete tasks**  
-✅ **Drage and Drop tasks between columns "To do", "Doing", and "Done"**  
+✅ **Create, edit, and delete tasks**  
+✅ **Drag and drop tasks between columns "To do", "Doing", and "Done"**  
 ✅ **Data persistence using localStorage**  
 ✅ **Search tasks using Title**  
+✅ **Fully responsive design**  
+✅ **Color codes for displaying status of task - Red(To do), Yellow(Doing) and Green(Done) that update automatically**  
 
 
 ---
@@ -77,7 +79,7 @@ Kloudmate-kanban-board
 Before you begin, ensure you have the following installed:
 
 -  [Node.js](https://nodejs.org/) 
--  [Git]()
+-  [Git](https://git-scm.com/downloads)
 
 ## 📌 **Installation Steps**
 

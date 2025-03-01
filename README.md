@@ -86,7 +86,7 @@ Before you begin, ensure you have the following installed:
 ### **1️⃣ Clone the Repository**
 
 ```bash
-git@github.com:sahil19-19/Kloudmate-kanban-board.git
+git clone git@github.com:sahil19-19/Kloudmate-kanban-board.git
 cd Kloudmate-kanban-board
 ```
 
